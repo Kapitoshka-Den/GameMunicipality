@@ -1,0 +1,764 @@
+﻿<Window x:Class="GameRANHIGS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameRANHIGS"
+        mc:Ignorable="d"
+        Title="Game"
+        Height="500"
+        Width="1000"
+        SizeChanged="Window_SizeChanged"
+        Background="LightBlue"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Resources/Images/TitleIcon.png">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="#FF01556A"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="10,0,0,10"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#FF01556A"/>
+        </Style>
+        <Style x:Key="StackDataStyle" TargetType="DockPanel">
+            <Setter Property="Background" Value="#dae5ea"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="LastChildFill" Value="False"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Name="GameField">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Column="2"
+                     Name="GameFieldCenter"
+                       Grid.Row="2"
+                       Grid.ColumnSpan="9"
+                       Grid.RowSpan="9"
+                     Stretch="Fill">
+                <Canvas Background="White"
+                        Width="100"
+                        Height="100">
+                    <Button Name="Cube"
+                            Width="10"
+                            Height="10"
+                            Canvas.Top="10"
+                            Canvas.Right="10"
+                            Click="Cube_Click"/>
+                    <Border Width="25"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="2"
+                            Background="#FFF9B4B4"
+                               Height="15"
+                               Canvas.Top="15"
+                               Canvas.Left="5"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <RotateTransform Angle="135"/>
+                        </Border.RenderTransform>
+                        <Image Source="/Resources/Images/TaskIcon.png"
+                               Width="10"
+                               RenderTransformOrigin="0.5,0.5">
+                        </Image>
+                    </Border>
+                    <Border Width="25"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="2"
+                            Background="#FFFFFF92"
+                               Height="15"
+                               Canvas.Top="45"
+                               Canvas.Left="35"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <RotateTransform Angle="135"/>
+                        </Border.RenderTransform>
+                        <Image Source="/Resources/Images/questionIcon.png"
+                               Width="10"
+                               RenderTransformOrigin="0.5,0.5">
+                        </Image>
+                    </Border>
+                    <Border Width="25"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="2"
+                            Background="#FFC8C8C8"
+                               Height="15"
+                               Canvas.Bottom="15"
+                               Canvas.Right="10"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <RotateTransform Angle="135"/>
+                        </Border.RenderTransform>
+                        <Image Source="/Resources/Images/people-money.png"
+                               Width="10"
+                               RenderTransformOrigin="0.5,0.5">
+                        </Image>
+                    </Border>
+                </Canvas>
+            </Viewbox>
+            <Border BorderBrush="Green"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Background="White"
+                    Grid.Column="1"
+                    Name="Card_0">
+                <Image Source="/Resources/Images/start.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_1"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       Name="Task"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_2"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_3"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="5"
+                    Name="Card_4"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_5"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="6"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_6"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="7"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_7"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="8"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Name="Card_8"
+                    Grid.Row="1"
+                    Grid.Column="9"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Name="Card_9"
+                    Grid.Row="1"
+                    Grid.Column="10"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="180"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_10"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="11"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="225"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Name="Card_11"
+                    Grid.Row="2"
+                    Grid.Column="11"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="3"
+                    Grid.Column="11"
+                    Background="#FFFFFF92"
+                    Name="Card_12">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="4"
+                    Grid.Column="11"
+                    Background="#FFC8C8C8"
+                    Name="Card_13">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="5"
+                    Grid.Column="11"
+                    Background="#FFF9B4B4"
+                    Name="Card_14">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5,5,5,0"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="6"
+                    Grid.Column="11"
+                    Background="#FFFFFF92"
+                    Name="Card_15">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="7"
+                    Grid.Column="11"
+                    Background="#FFF9B4B4"
+                    Name="Card_16">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="8"
+                    Grid.Column="11"
+                    Background="#FFC8C8C8"
+                    Name="Card_17">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="9"
+                    Grid.Column="11"
+                    Background="#FFFFFF92"
+                    Name="Card_18">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="10"
+                    Grid.Column="11"
+                    Background="#FFC8C8C8"
+                    Name="Card_19">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="270"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="11"
+                    Background="#FFF9B4B4"
+                    Name="Card_20">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="315"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="10"
+                    Name="Card_21"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="9"
+                    Background="#FFC8C8C8"
+                    Name="Card_22">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="8"
+                    Background="#FFFFFF92"
+                    Name="Card_23">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="7"
+                    Background="#FFF9B4B4"
+                    Name="Card_24">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="6"
+                    Name="Card_25"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="5"
+                    Name="Card_26"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="4"
+                    Name="Card_27"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="3"
+                    Name="Card_28"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="2"
+                    Name="Card_29"
+                    Background="#FFFFFF92">
+
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"/>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_30"
+                    BorderThickness="3"
+                    Grid.Row="11"
+                    Grid.Column="1"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="45"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_31"
+                    BorderThickness="3"
+                    Grid.Row="10"
+                    Grid.Column="1"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_32"
+                    BorderThickness="3"
+                    Grid.Row="9"
+                    Grid.Column="1"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_33"
+                    BorderThickness="3"
+                    Grid.Row="8"
+                    Grid.Column="1"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    Name="Card_34"
+                    BorderThickness="3"
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    Background="#FFF9B4B4">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Name="Card_35"
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Name="Card_36"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Background="#FFC8C8C8">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Name="Card_37"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Background="#FFFFFF92">
+                <Image Source="/Resources/Images/questionIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Background="#FFC8C8C8"
+                    Name="Card_38">
+                <Image Source="/Resources/Images/people-money.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+            <Border BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Background="#FFF9B4B4"
+                    Name="Card_39">
+                <Image Source="/Resources/Images/TaskIcon.png"
+                       Margin="5"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Border>
+        </Grid>
+        <Viewbox Grid.Column="1">
+            <StackPanel Grid.Column="1"
+                        Name="InfoCardStack">
+                <TextBlock Text="Карта Муниципалитета"
+                       TextAlignment="Center"
+                       FontSize="30"
+                       Foreground="#FF01556A"
+                       />
+                <DockPanel LastChildFill="False"
+                       Margin="10">
+                    <DockPanel Style="{StaticResource StackDataStyle}"
+                               Name="opekStackPanel">
+                        <StackPanel DockPanel.Dock="Top">
+                            <TextBlock Text="Отдел Опеки и Попечительства"/>
+                            <CheckBox Content="Младший Сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="LowSpecOpek"/>
+                            <CheckBox Content="Сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="SpecOpec"/>
+                            <CheckBox Content="Старший сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="HighSpecOpec"/>
+                        </StackPanel>
+                        <TextBlock Name="opekCounterText"
+                                   DockPanel.Dock="Bottom"
+                               FontSize="16"/>
+                    </DockPanel>
+                    <DockPanel Style="{StaticResource StackDataStyle}"
+                                Name="orgStackPanel">
+                        <StackPanel 
+                                DockPanel.Dock="Top">
+                            <TextBlock Text="Организационный отдел"
+                              />
+                            <CheckBox Content="Младший Сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="LowSpecOrg"/>
+                            <CheckBox Content="Сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="SpecOrg"/>
+                            <CheckBox Content="Старший сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="HighSpecOrg"/>
+                        </StackPanel>
+                        <TextBlock Name="orgCounterText"
+                                   DockPanel.Dock="Bottom"
+                               FontSize="16"/>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel LastChildFill="False"
+                           Margin="10">
+                    <DockPanel Style="{StaticResource StackDataStyle}"
+                               
+                               Width="{Binding ElementName=opekStackPanel, Path=ActualWidth}"
+                                Name="blagStackPanel">
+                        <StackPanel DockPanel.Dock="Top">
+                            <TextBlock Text="Отдел Благоустройтсва"/>
+                            <CheckBox Content="Младший Сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="LowSpecBlag"/>
+                            <CheckBox Content="Сотрудник"
+                                 IsHitTestVisible="False"
+                                 Foreground="#FF01556A"
+                                 IsTabStop="False"
+                                      Name="SpecBlag"/>
+                            <CheckBox Content="Старший сотрудник"
+                                 IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="HighSpecBlag"/>
+                        </StackPanel>
+                        <TextBlock Name="blagCounterText"
+                                   DockPanel.Dock="Bottom"
+                                FontSize="16"/>
+                    </DockPanel>
+                    <DockPanel Style="{StaticResource StackDataStyle}"
+                               Width="{Binding ElementName=orgStackPanel, Path=ActualWidth}">
+                        <StackPanel DockPanel.Dock="Top">
+                            <TextBlock Text="Глава МО"
+                                   Margin="10"/>
+                            <CheckBox Content="Кейс 1"
+                                      IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="CheckCase_1"/>
+                            <CheckBox Content="Кейс 2"
+                                      IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="CheckCase_2"/>
+                            <CheckBox Content="Кейс 3"
+                                      IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="CheckCase_3"/>
+                            <CheckBox Content="Кейс 4"
+                                      IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="CheckCase_4"/>
+                            <CheckBox Content="Кейс 5"
+                                      IsHitTestVisible="False"
+                                 IsTabStop="False"
+                                      Name="CheckCase_5"/>
+                        </StackPanel>
+                    </DockPanel>
+                </DockPanel>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</Window>
