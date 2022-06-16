@@ -180,7 +180,7 @@ namespace GameRANHIGS.Questions
                         if (SaverCounter.BlagCounter != 0)
                         {
                             SaverCounter.BlagCounter -= Convert.ToInt32(changeValue);
-                            owner.opekCounterText.Text = convertMoney.ConvertValue(SaverCounter.BlagCounter);
+                            owner.blagCounterText.Text = convertMoney.ConvertValue(SaverCounter.BlagCounter);
                         }
                         else if (SaverCounter.BlagCounter == 0)
                         {
@@ -202,7 +202,7 @@ namespace GameRANHIGS.Questions
                 }
                 else
                 {
-                    if (fileName.Split('_')[0] == "Substraction")
+                    if (fileName.Split('_')[0] == "Subtraction")
                     {
 
                         if (changeValue == "Младший специалист")

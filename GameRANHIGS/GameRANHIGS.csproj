@@ -140,15 +140,15 @@
   <ItemGroup>
     <Resource Include="Resources\Images\specialist.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Questions\Tasks\Subtraction_Spec_1.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Questions\Tasks\Addition_Money_1.txt" />
     <Resource Include="Questions\Tasks\Addition_Money_2.txt" />
     <Resource Include="Questions\Tasks\Addition_Spec_1.txt" />
-    <Resource Include="Questions\Tasks\Substraction_Spec_1.txt" />
     <Resource Include="Questions\Tasks\Subtraction_Money_1.txt" />
     <Resource Include="Questions\Tasks\Subtraction_Money_2.txt" />
-    <Resource Include="Questions\Tasks\Subtraction_Spec_1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

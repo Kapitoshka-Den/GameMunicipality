@@ -8,12 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/addition_money_1.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/addition_money_2.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/addition_spec_1.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/substraction_spec_1.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/subtraction_money_1.txt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/subtraction_money_2.txt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/subtraction_spec_1.txt")]
 
 

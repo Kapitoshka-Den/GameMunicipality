@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="QuestionCard" Height="200" Width="300"
         WindowStyle="None"
-        Closing="Window_Closing">
+        Closing="Window_Closing"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        BorderThickness="2">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

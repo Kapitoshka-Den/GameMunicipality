@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:GameRANHIGS"
         mc:Ignorable="d"
         Title="Game"
+        MinHeight="500"
+        MinWidth="1000"
         Height="500"
         Width="1000"
         SizeChanged="Window_SizeChanged"

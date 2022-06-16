@@ -11,28 +11,32 @@
         WindowStartupLocation="CenterOwner"
         WindowStyle="None"
         Name="ResourcesWindow"
-        Closing="ResourcesWindow_Closing">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="3*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Ресурс"
+        Closing="ResourcesWindow_Closing"
+        ResizeMode="NoResize" BorderThickness="2"
+        >
+    
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="3*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Ресурс"
                    Background="#FFC8C8C8"
                    FontSize="30"
                    TextAlignment="Center"/>
-        <StackPanel Grid.Row="1"
+            <StackPanel Grid.Row="1"
                     Orientation="Vertical"
                     HorizontalAlignment="Center">
-            <Image Name="ResourcesImage"
+                <Image Name="ResourcesImage"
                    Height="50"
                    Margin="10"/>
-            <TextBlock Name="ResourcesText"
+                <TextBlock Name="ResourcesText"
                        TextAlignment="Center"
                        FontSize="18"/>
-        </StackPanel>
-        <Button Grid.Row="2"
+            </StackPanel>
+            <Button Grid.Row="2"
                 IsDefault="True"
                 IsCancel="True"
                 Height="20"
@@ -40,5 +44,6 @@
                 Margin="5"
                 Content="Выход"
                 Click="Button_Click"/>
-    </Grid>
+        </Grid>
+    
 </Window>
