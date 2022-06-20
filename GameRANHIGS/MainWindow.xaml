@@ -11,7 +11,7 @@
         Height="500"
         Width="1000"
         SizeChanged="Window_SizeChanged"
-        Background="LightBlue"
+        Background="#FF632C2B"
         WindowStartupLocation="CenterScreen"
         Icon="/Resources/Images/TitleIcon.png">
     <Window.Resources>
@@ -19,19 +19,22 @@
             <Setter Property="Margin" Value="10"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="Foreground" Value="#FF01556A"/>
+            <Setter Property="Foreground" Value="#FFEEC55B"/>
         </Style>
         <Style TargetType="CheckBox">
             <Setter Property="Margin" Value="10,0,0,10"/>
             <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Foreground" Value="#FF01556A"/>
+            <Setter Property="Foreground" Value="#FFEEC55B"/>
         </Style>
         <Style x:Key="StackDataStyle" TargetType="DockPanel">
-            <Setter Property="Background" Value="#dae5ea"/>
-            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="#FF681312"/>
             <Setter Property="LastChildFill" Value="False"/>
         </Style>
-
+        <Style TargetType="Border" x:Key="cardBorder">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="#FFEEC556"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -55,7 +58,7 @@
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.6*"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -69,6 +72,9 @@
                 <RowDefinition/>
                 <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
+            <Image Source="/Resources/Images/right-arrow.png" 
+                   Grid.Column="1"
+                   Margin="5"/>
             <Viewbox Grid.Column="2"
                      Name="GameFieldCenter"
                        Grid.Row="2"
@@ -83,7 +89,12 @@
                             Height="10"
                             Canvas.Top="10"
                             Canvas.Right="10"
-                            Click="Cube_Click"/>
+                            Click="Cube_Click"
+                            Background="White"
+                            BorderBrush="Transparent">
+                        <Image Name="DiceImage"
+                               Source="/Resources/Images/dice/dice_1.png"/>
+                    </Button>
                     <Border Width="25"
                             BorderBrush="Black"
                             BorderThickness="1"
@@ -657,108 +668,117 @@
                 <TextBlock Text="Карта Муниципалитета"
                        TextAlignment="Center"
                        FontSize="30"
-                       Foreground="#FF01556A"
+                       Foreground="#FFEEC55B"
                        />
                 <DockPanel LastChildFill="False"
                        Margin="10">
-                    <DockPanel Style="{StaticResource StackDataStyle}"
+                    <Border Style="{StaticResource cardBorder}">
+                        <DockPanel Style="{StaticResource StackDataStyle}"
                                Name="opekStackPanel">
-                        <StackPanel DockPanel.Dock="Top">
-                            <TextBlock Text="Отдел Опеки и Попечительства"/>
-                            <CheckBox Content="Младший Сотрудник"
+                            <StackPanel DockPanel.Dock="Top">
+                                <TextBlock Text="Отдел Опеки и Попечительства"/>
+                                <CheckBox Content="Младший Сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="LowSpecOpek"/>
-                            <CheckBox Content="Сотрудник"
+                                <CheckBox Content="Сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="SpecOpec"/>
-                            <CheckBox Content="Старший сотрудник"
+                                <CheckBox Content="Старший сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="HighSpecOpec"/>
-                        </StackPanel>
-                        <TextBlock Name="opekCounterText"
+                            </StackPanel>
+                            <TextBlock Name="opekCounterText"
                                    DockPanel.Dock="Bottom"
                                FontSize="16"/>
-                    </DockPanel>
-                    <DockPanel Style="{StaticResource StackDataStyle}"
+                        </DockPanel>
+                    </Border>
+                    <Border Style="{StaticResource cardBorder}">
+
+                        <DockPanel Style="{StaticResource StackDataStyle}"
                                 Name="orgStackPanel">
-                        <StackPanel 
+                            <StackPanel 
                                 DockPanel.Dock="Top">
-                            <TextBlock Text="Организационный отдел"
+                                <TextBlock Text="Организационный отдел"
                               />
-                            <CheckBox Content="Младший Сотрудник"
+                                <CheckBox Content="Младший Сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="LowSpecOrg"/>
-                            <CheckBox Content="Сотрудник"
+                                <CheckBox Content="Сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="SpecOrg"/>
-                            <CheckBox Content="Старший сотрудник"
+                                <CheckBox Content="Старший сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="HighSpecOrg"/>
-                        </StackPanel>
-                        <TextBlock Name="orgCounterText"
+                            </StackPanel>
+                            <TextBlock Name="orgCounterText"
                                    DockPanel.Dock="Bottom"
                                FontSize="16"/>
-                    </DockPanel>
+                        </DockPanel>
+                    </Border>
                 </DockPanel>
                 <DockPanel LastChildFill="False"
                            Margin="10">
-                    <DockPanel Style="{StaticResource StackDataStyle}"
+                    <Border Style="{StaticResource cardBorder}">
+                        <DockPanel Style="{StaticResource StackDataStyle}"
                                
                                Width="{Binding ElementName=opekStackPanel, Path=ActualWidth}"
                                 Name="blagStackPanel">
-                        <StackPanel DockPanel.Dock="Top">
-                            <TextBlock Text="Отдел Благоустройтсва"/>
-                            <CheckBox Content="Младший Сотрудник"
+                            <StackPanel DockPanel.Dock="Top">
+                                <TextBlock Text="Отдел Благоустройтсва"/>
+                                <CheckBox Content="Младший Сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="LowSpecBlag"/>
-                            <CheckBox Content="Сотрудник"
+                                <CheckBox Content="Сотрудник"
                                  IsHitTestVisible="False"
-                                 Foreground="#FF01556A"
                                  IsTabStop="False"
                                       Name="SpecBlag"/>
-                            <CheckBox Content="Старший сотрудник"
+                                <CheckBox Content="Старший сотрудник"
                                  IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="HighSpecBlag"/>
-                        </StackPanel>
-                        <TextBlock Name="blagCounterText"
+                            </StackPanel>
+                            <TextBlock Name="blagCounterText"
                                    DockPanel.Dock="Bottom"
                                 FontSize="16"/>
-                    </DockPanel>
-                    <DockPanel Style="{StaticResource StackDataStyle}"
+                        </DockPanel>
+                    </Border>
+                    <Border Style="{StaticResource cardBorder}">
+                        <DockPanel Style="{StaticResource StackDataStyle}"
                                Width="{Binding ElementName=orgStackPanel, Path=ActualWidth}">
-                        <StackPanel DockPanel.Dock="Top">
-                            <TextBlock Text="Глава МО"
+                            <StackPanel DockPanel.Dock="Top"
+                                    Name="CaseStack">
+                                <TextBlock Text="Глава МО"
                                    Margin="10"/>
-                            <CheckBox Content="Кейс 1"
+                                <CheckBox Content="Кейс 1"
                                       IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="CheckCase_1"/>
-                            <CheckBox Content="Кейс 2"
+                                <CheckBox Content="Кейс 2"
                                       IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="CheckCase_2"/>
-                            <CheckBox Content="Кейс 3"
+                                <CheckBox Content="Кейс 3"
                                       IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="CheckCase_3"/>
-                            <CheckBox Content="Кейс 4"
+                                <CheckBox Content="Кейс 4"
                                       IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="CheckCase_4"/>
-                            <CheckBox Content="Кейс 5"
+                                <CheckBox Content="Кейс 5"
                                       IsHitTestVisible="False"
                                  IsTabStop="False"
                                       Name="CheckCase_5"/>
-                        </StackPanel>
-                    </DockPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
                 </DockPanel>
             </StackPanel>
         </Viewbox>

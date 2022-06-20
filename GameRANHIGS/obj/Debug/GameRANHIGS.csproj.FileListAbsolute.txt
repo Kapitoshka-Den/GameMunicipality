@@ -20,3 +20,10 @@ C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Resources\Cards\ResourcesCard\R
 C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Resources\Cards\ResourcesCard\ResourcesCard.baml
 C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Questions\QuestionCard.g.cs
 C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Questions\QuestionCard.baml
+C:\WorkProject\GameRANHIGS\GameRANHIGS\bin\Debug\Newtonsoft.Json.dll
+C:\WorkProject\GameRANHIGS\GameRANHIGS\bin\Debug\Newtonsoft.Json.xml
+C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Resources\Cards\TaskCard\TaskWindow.g.cs
+C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Resources\Cards\TaskCard\TaskWindow.baml
+C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\GameRANHIGS.csproj.CopyComplete
+C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Windows\MainManu.g.cs
+C:\WorkProject\GameRANHIGS\GameRANHIGS\obj\Debug\Windows\MainManu.baml

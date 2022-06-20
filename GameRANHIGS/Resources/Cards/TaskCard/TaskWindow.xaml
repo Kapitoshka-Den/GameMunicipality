@@ -1,0 +1,60 @@
+﻿<Window x:Class="GameRANHIGS.Resources.Cards.TaskCard.TaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameRANHIGS.Resources.Cards.TaskCard"
+        mc:Ignorable="d"
+        Title="TaskWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextAlignment="Center"
+                   Background="#FFF9B4B4"
+                   Text="Кейс-Задание"
+                   FontSize="30"
+                   Margin="0"
+                   Padding="10"/>
+        <ScrollViewer  Grid.Row="1">
+            <StackPanel>
+                <TextBlock Name="TaskText"
+                       TextWrapping="Wrap"
+                       Margin="10"/>
+                <TextBlock Name="TaskQuestionText"
+                       Margin="10"
+                       />
+                <StackPanel HorizontalAlignment="Center"
+                        Name="answerList">
+                </StackPanel>
+                <TextBlock Name="explanationText"
+                           IsEnabled="False"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Button Grid.Row="2"
+                Width="150"
+                Height="30"
+                Content="Выход"
+                IsDefault="True"
+                IsCancel="True"
+                Name="ExitButton"
+                Click="Button_Click"
+                IsEnabled="False"/>
+    </Grid>
+</Window>

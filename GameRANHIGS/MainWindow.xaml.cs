@@ -2,6 +2,7 @@
 using GameRANHIGS.Classes.StaticClasses;
 using GameRANHIGS.Questions;
 using GameRANHIGS.Resources.Cards.ResourcesCard;
+using GameRANHIGS.Resources.Cards.TaskCard;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -51,15 +52,22 @@ namespace GameRANHIGS
         
         {
             Random random = new Random();
-            for (int i = 0; i < random.Next(1, 6); i++)
+            int randValue = random.Next(1, 6);
+
+            for (int i = 0; i < randValue; i++)
             {
                 TestMethod();
             }
+
+            DiceImage.Source = new BitmapImage(new Uri($@"/Resources/Images/dice/dice_{randValue}.png", UriKind.Relative));
+
             var windowOpener = (FindName("Card_" + gamerPlace) as Border).Background.ToString();
             switch (windowOpener)
             {
                 case ("#FFF9B4B4"):
-                    MessageBox.Show("TaskWIndow");
+                    TaskWindow taskWindow = new TaskWindow();
+                    taskWindow.Owner = this;
+                    taskWindow.ShowDialog();
                     break;
                 case ("#FFFFFF92"):
                     QuestionCard questionCard = new QuestionCard();

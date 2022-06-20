@@ -8,6 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("questions/tasks/subtraction_spec_1.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/dice/dice-result-two.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/dice/dice-three.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/dice/dice.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/dice/dice_five.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/dice/die-four.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/dice/die-six.png")]
 
 

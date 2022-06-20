@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\CaseEntities.cs" />
     <Compile Include="Classes\ConvertMoney.cs" />
     <Compile Include="Classes\GameResourcesType.cs" />
     <Compile Include="Classes\StaticClasses\SaverCounter.cs" />
@@ -65,8 +69,14 @@
     <Compile Include="Resources\Cards\ResourcesCard\ResourcesCard.xaml.cs">
       <DependentUpon>ResourcesCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Cards\TaskCard\TaskWindow.xaml.cs">
+      <DependentUpon>TaskWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\CardWindow.xaml.cs">
       <DependentUpon>CardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainManu.xaml.cs">
+      <DependentUpon>MainManu.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -88,7 +98,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Cards\TaskCard\TaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\CardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainManu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,10 +129,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Cards\TaskCard\Tasks\Case_1.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -149,6 +169,17 @@
     <Resource Include="Questions\Tasks\Addition_Spec_1.txt" />
     <Resource Include="Questions\Tasks\Subtraction_Money_1.txt" />
     <Resource Include="Questions\Tasks\Subtraction_Money_2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\dice\dice_2.png" />
+    <Resource Include="Resources\Images\dice\dice_3.png" />
+    <Resource Include="Resources\Images\dice\dice_1.png" />
+    <Resource Include="Resources\Images\dice\dice_5.png" />
+    <Resource Include="Resources\Images\dice\dice_4.png" />
+    <Resource Include="Resources\Images\dice\dice_6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
